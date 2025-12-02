@@ -1,0 +1,23 @@
+# Compiled files
+*.o
+*.out
+todoManager
+
+# Data files
+tasks.dat
+*.dat
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*~
