@@ -23,9 +23,9 @@ int findTaskIndexById(const TaskList* list, int id) {
 // TODO (Person 2): Implement this helper function
 // Validate date format (YYYY-MM-DD)
 int isValidDate(const char* date) {
-    // Check length
     if (strlen(date) != 10) return 0;
-    return 1; // More checks coming
+    if (date[4] != '-' || date[7] != '-') return 0;
+    return 1; // Digit check coming
 }
 
 // TODO (Person 2): Implement this function
