@@ -25,7 +25,12 @@ int findTaskIndexById(const TaskList* list, int id) {
 int isValidDate(const char* date) {
     if (strlen(date) != 10) return 0;
     if (date[4] != '-' || date[7] != '-') return 0;
-    return 1; // Digit check coming
+    
+    for (int i = 0; i < 10; i++) {
+        if (i == 4 || i == 7) continue;
+        if (!isdigit(date[i])) return 0;
+    }
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
