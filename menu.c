@@ -162,23 +162,69 @@ void handleSearch(TaskList* list) {
     searchTasksByKeyword(list, keyword);
 }
 
-// TODO (Person 2): Implement this main handler function
-// Handle the user's menu choice
+// Handle menu choice
 void handleMenuChoice(TaskList* list, int choice, int* running) {
-    // TODO: Use switch statement to handle each choice:
-    // Case 1: Call handleAddTask()
-    // Case 2: Call handleDeleteTask()
-    // Case 3: Call handleUpdateTask()
-    // Case 4: Call handleViewSingle()
-    // Case 5: Call handleViewByRange()
-    // Case 6: Call displayAllTasks() (from Person 3)
-    // Case 7: Call handleSearch()
-    // Case 8: Call saveTasksToFile() (from Person 1)
-    // Case 9: Call loadTasksFromFile() (from Person 1)
-    // Case 0: Ask to save, then set *running = 0 to exit
-    // Default: Print "Invalid choice"
-    
-    // After each case (except 0), call pressEnterToContinue()
-    
-    printf("Error: handleMenuChoice not implemented yet\n");
+    switch(choice) {
+        case 1:
+            clearInputBuffer();
+            handleAddTask(list);
+            pressEnterToContinue();
+            break;
+            
+        case 2:
+            handleDeleteTask(list);
+            pressEnterToContinue();
+            break;
+            
+        case 3:
+            handleUpdateTask(list);
+            pressEnterToContinue();
+            break;
+            
+        case 4:
+            handleViewSingle(list);
+            pressEnterToContinue();
+            break;
+            
+        case 5:
+            handleViewByRange(list);
+            pressEnterToContinue();
+            break;
+            
+        case 6:
+            displayAllTasks(list);
+            pressEnterToContinue();
+            break;
+            
+        case 7:
+            handleSearch(list);
+            pressEnterToContinue();
+            break;
+            
+        case 8:
+            saveTasksToFile(list, DATA_FILE);
+            pressEnterToContinue();
+            break;
+            
+        case 9:
+            loadTasksFromFile(list, DATA_FILE);
+            pressEnterToContinue();
+            break;
+            
+        case 0:
+            printf("\nSave before exit? (y/n): ");
+            clearInputBuffer();
+            char save;
+            scanf(" %c", &save);
+            if (save == 'y' || save == 'Y') {
+                saveTasksToFile(list, DATA_FILE);
+            }
+            printf("\nThank you for using To-Do Manager! Goodbye!\n");
+            *running = 0;
+            break;
+            
+        default:
+            printf("\nInvalid choice! Please try again.\n");
+            pressEnterToContinue();
+    }
 }
