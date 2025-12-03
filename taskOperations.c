@@ -133,7 +133,7 @@ int updateTask(TaskList* list, int id) {
         buffer[strcspn(buffer, "\n")] = 0;
         if (strlen(buffer) > 0) {
             strncpy(task->title, buffer, MAX_TITLE - 1);
-            printf("✓ Title updated!\n");
+            printf("Title updated!\n");
         }
         break;
 
@@ -142,7 +142,18 @@ int updateTask(TaskList* list, int id) {
         fgets(buffer, MAX_DESC, stdin);
         buffer[strcspn(buffer, "\n")] = 0;
         strncpy(task->description, buffer, MAX_DESC - 1);
-        printf("✓ Description updated!\n");
+        printf("Description updated!\n");
+    break;
+
+    case 3:
+    printf("New due date (YYYY-MM-DD): ");
+    scanf("%10s", buffer);
+    if (isValidDate(buffer)) {
+        strncpy(task->dueDate, buffer, MAX_DATE - 1);
+        printf("Due date updated!\n");
+    } else {
+        printf("Error: Invalid date format!\n");
+    }
     break;
 }
 
