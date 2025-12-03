@@ -109,15 +109,44 @@ void handleViewSingle(TaskList* list) {
     displayTaskById(list, id);
 }
 
+// Handle View by Range/Filter
 void handleViewByRange(TaskList* list) {
-    // TODO:
-    // 1. Print "=== View Tasks by Filter ==="
-    // 2. Show sub-menu:
-    //    - 1. By Priority
-    //    - 2. By Status
-    //    - 3. By Date Range
-    // 3. Get user choice
-    // 4. Call appropriate display function (from Person 3)
+    int filterChoice;
+    
+    printf("\n=== View Tasks by Filter ===\n");
+    printf("1. By Priority\n");
+    printf("2. By Status (Completed/Pending)\n");
+    printf("3. By Date Range\n");
+    printf("Enter choice: ");
+    scanf("%d", &filterChoice);
+    
+    switch(filterChoice) {
+        case 1: {
+            int priority;
+            printf("Enter Priority (1=Low, 2=Medium, 3=High): ");
+            scanf("%d", &priority);
+            displayTasksByPriority(list, stringToPriority(priority));
+            break;
+        }
+        case 2: {
+            int status;
+            printf("Enter Status (0=Pending, 1=Completed): ");
+            scanf("%d", &status);
+            displayTasksByStatus(list, status);
+            break;
+        }
+        case 3: {
+            char startDate[MAX_DATE], endDate[MAX_DATE];
+            printf("Start Date (YYYY-MM-DD): ");
+            scanf("%10s", startDate);
+            printf("End Date (YYYY-MM-DD): ");
+            scanf("%10s", endDate);
+            displayTasksByDateRange(list, startDate, endDate);
+            break;
+        }
+        default:
+            printf("Invalid choice!\n");
+    }
 }
 
 void handleSearch(TaskList* list) {
