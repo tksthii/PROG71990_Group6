@@ -155,6 +155,24 @@ int updateTask(TaskList* list, int id) {
         printf("Error: Invalid date format!\n");
     }
     break;
+
+    case 4:
+    printf("New priority (1=Low, 2=Medium, 3=High): ");
+    scanf("%d", &priority);
+    if (priority >= 1 && priority <= 3) {
+        task->priority = stringToPriority(priority);
+        printf("✓ Priority updated!\n");
+    }
+    break;
+    
+    case 5:
+    printf("New status (0=Pending, 1=Done): ");
+    scanf("%d", &status);
+    if (status == 0 || status == 1) {
+        task->isCompleted = status;
+        printf("Status updated!\n");
+    }
+    break;
 }
 
 // TODO (Person 2): Implement this function
