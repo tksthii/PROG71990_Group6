@@ -37,37 +37,38 @@ int isValidDate(const char* date) {
 // Add a new task to the list
 int addTask(TaskList* list, const char* title, const char* description,
             const char* dueDate, Priority priority) {
-    // TODO:
-    // 1. Check if list is full (count >= MAX_TASKS)
-    // 2. Validate title is not empty (strlen > 0)
-    // 3. Validate date format using isValidDate()
-    // 4. Create new task using createTask() with list->nextId
-    // 5. Add task to list->tasks[list->count]
-    // 6. Increment list->count
-    // 7. Increment list->nextId
-    // 8. Print success message with task ID
-    // 9. Return 1 for success, 0 for failure
-    
-    printf("Error: addTask not implemented yet\n");
+    // Check if list is full
+    if (list->count >= MAX_TASKS) {
+        printf("Error: Task list is full!\n");
+        return 0;
+    }
+    if (strlen(title) == 0) {
+    printf("Error: Title cannot be empty!\n");
     return 0;
+}
+    if (!isValidDate(dueDate)) {
+    printf("Error: Invalid date format! Use YYYY-MM-DD\n");
+    return 0;
+}
+   // After validations:
+   Task newTask = createTask(list->nextId, title, description, dueDate, priority); 
+   list->tasks[list->count] = newTask;
+    list->count++;
+    list->nextId++;
+    printf(" Task added successfully! (ID: %d)\n", newTask.id);
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
 // Delete a task by ID
 int deleteTask(TaskList* list, int id) {
-    // TODO:
-    // 1. Find task index using findTaskIndexById()
-    // 2. If not found (index == -1), print error and return 0
-    // 3. Display the task to be deleted
-    // 4. Ask for confirmation (y/n)
-    // 5. If confirmed:
-    //    - Shift all tasks after this one left by 1 position
-    //    - Decrement list->count
-    //    - Print success message
-    //    - Return 1
-    // 6. If not confirmed, return 0
+    int index = findTaskIndexById(list, id);
     
-    printf("Error: deleteTask not implemented yet\n");
+    if (index == -1) {
+        printf("Error: Task with ID %d not found!\n", id);
+        return 0;
+    }
+    // More coming
     return 0;
 }
 

@@ -15,15 +15,15 @@
 // TODO (Person 2): Implement this helper function
 // Clear the input buffer
 void clearInputBuffer(void) {
-    // TODO: Read and discard characters until newline or EOF
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
 
 // TODO (Person 2): Implement this helper function
 // Wait for user to press Enter
 void pressEnterToContinue(void) {
-    // TODO:
-    // 1. Print "Press Enter to continue..."
-    // 2. Call clearInputBuffer()
+    printf("\nPress Enter to continue...");
+    clearInputBuffer();
 }
 
 // TODO (Person 2): Implement this function
