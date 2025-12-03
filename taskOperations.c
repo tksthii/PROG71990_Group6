@@ -76,11 +76,16 @@ int deleteTask(TaskList* list, int id) {
     scanf(" %c", &confirm);
 
     if (confirm != 'y' && confirm != 'Y') {
+        
     printf("Deletion cancelled.\n");
     return 0;
 }
-    // More coming
-    return 0;
+    for (int i = index; i < list->count - 1; i++) {
+    list->tasks[i] = list->tasks[i + 1];
+}
+    list->count--;
+    printf("Task deleted successfully!\n");
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
