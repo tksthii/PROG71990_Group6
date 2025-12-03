@@ -52,6 +52,17 @@ void printTask(const Task* task) {
     // TODO: Print task information in table format
     // Match the format used in printTaskHeader()
     // Use priorityToString() and check isCompleted for status
+    const char* status;
+    if(task->isCompleted)
+    {
+        status = "Completed";
+    
+    }
+    else{
+        status = "Pending";
+    }
+    printf("%-4s | %-20s | %-12s | %-8s | %-10s\n",
+       task->id,task->title,task->dueDate,priorityToString(task->priority),status);
 }
 
 // TODO (Person 1): Implement this function
