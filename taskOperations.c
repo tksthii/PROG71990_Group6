@@ -68,49 +68,142 @@ int deleteTask(TaskList* list, int id) {
         printf("Error: Task with ID %d not found!\n", id);
         return 0;
     }
-    // More coming
+    printf("\nAre you sure you want to delete this task?\n");
+    printTaskHeader();
+    printTask(&list->tasks[index]);
+    printf("\nConfirm? (y/n): ");
+    char confirm;
+    scanf(" %c", &confirm);
+
+    if (confirm != 'y' && confirm != 'Y') {
+        
+    printf("Deletion cancelled.\n");
     return 0;
+}
+    for (int i = index; i < list->count - 1; i++) {
+    list->tasks[i] = list->tasks[i + 1];
+}
+    list->count--;
+    printf("Task deleted successfully!\n");
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
 // Update an existing task
 int updateTask(TaskList* list, int id) {
-    // TODO:
-    // 1. Find task using findTaskIndexById()
-    // 2. If not found, print error and return 0
-    // 3. Display current task details
-    // 4. Show menu of what can be updated:
-    //    - 1. Title
-    //    - 2. Description
-    //    - 3. Due Date
-    //    - 4. Priority
-    //    - 5. Status
-    //    - 0. Cancel
-    // 5. Get user choice
-    // 6. Based on choice, update the appropriate field
-    // 7. Validate input where necessary
-    // 8. Print success message
-    // 9. Return 1 for success
+    int index = findTaskIndexById(list, id);
     
-    printf("Error: updateTask not implemented yet\n");
+    if (index == -1) {
+        printf("Error: Task with ID %d not found!\n", id);
+        return 0;
+    }
+    
+    Task* task = &list->tasks[index];
+    
+    printf("\n=== Update Task (ID: %d) ===\n", id);
+    printf("Current details:\n");
+
+    printf("Title: %s\n", task->title);
+    printf("Description: %s\n", task->description);
+    printf("Due Date: %s\n", task->dueDate);
+    printf("Priority: %s\n", priorityToString(task->priority));
+    printf("Status: %s\n", task->isCompleted ? "Done" : "Pending");
+    
+    printf("\nWhat would you like to update?\n");
+    printf("1. Title\n");
+    printf("2. Description\n");
+    printf("3. Due Date\n");
+    printf("4. Priority\n");
+    printf("5. Status\n");
+    printf("0. Cancel\n");
+    printf("Choice: ");
+
+    int choice;
+    scanf("%d", &choice);
+    getchar();
     return 0;
+
+    char buffer[MAX_DESC];
+    int priority, status;
+
+    switch(choice) {
+    case 1:
+        printf("New title: ");
+        fgets(buffer, MAX_TITLE, stdin);
+        buffer[strcspn(buffer, "\n")] = 0;
+        if (strlen(buffer) > 0) {
+            strncpy(task->title, buffer, MAX_TITLE - 1);
+            printf("Title updated!\n");
+        }
+        break;
+
+    case 2:
+        printf("New description: ");
+        fgets(buffer, MAX_DESC, stdin);
+        buffer[strcspn(buffer, "\n")] = 0;
+        strncpy(task->description, buffer, MAX_DESC - 1);
+        printf("Description updated!\n");
+    break;
+
+    case 3:
+    printf("New due date (YYYY-MM-DD): ");
+    scanf("%10s", buffer);
+    if (isValidDate(buffer)) {
+        strncpy(task->dueDate, buffer, MAX_DATE - 1);
+        printf("Due date updated!\n");
+    } else {
+        printf("Error: Invalid date format!\n");
+    }
+    break;
+
+    case 4:
+    printf("New priority (1=Low, 2=Medium, 3=High): ");
+    scanf("%d", &priority);
+    if (priority >= 1 && priority <= 3) {
+        task->priority = stringToPriority(priority);
+        printf("✓ Priority updated!\n");
+    }
+    break;
+    
+    case 5:
+    printf("New status (0=Pending, 1=Done): ");
+    scanf("%d", &status);
+    if (status == 0 || status == 1) {
+        task->isCompleted = status;
+        printf("Status updated!\n");
+    }
+    break;
+
+    case 0:
+    printf("Update cancelled.\n");
+    return 0;
+    
+    default:
+    printf("Invalid choice!\n");
+    return 0;
+}
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
 // Display a single task by ID with full details
 int displayTaskById(const TaskList* list, int id) {
-    // TODO:
-    // 1. Find task using findTaskIndexById()
-    // 2. If not found, print error and return 0
-    // 3. Print detailed task information:
-    //    - ID
-    //    - Title
-    //    - Description
-    //    - Due Date
-    //    - Priority
-    //    - Status
-    // 4. Return 1 for success
+    int index = findTaskIndexById(list, id);
     
-    printf("Error: displayTaskById not implemented yet\n");
-    return 0;
+    if (index == -1) {
+        printf("Error: Task with ID %d not found!\n", id);
+        return 0;
+    }
+    
+    const Task* task = &list->tasks[index];
+    
+    printf("\n========== Task Details ==========\n");
+    printf("ID:          %d\n", task->id);
+    printf("Title:       %s\n", task->title);
+    printf("Description: %s\n", task->description);
+    printf("Due Date:    %s\n", task->dueDate);
+    printf("Priority:    %s\n", priorityToString(task->priority));
+    printf("Status:      %s\n", task->isCompleted ? "Done" : "Pending");
+    printf("==================================\n");
+    return 1;
 }
