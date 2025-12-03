@@ -136,6 +136,14 @@ int updateTask(TaskList* list, int id) {
             printf("✓ Title updated!\n");
         }
         break;
+
+    case 2:
+        printf("New description: ");
+        fgets(buffer, MAX_DESC, stdin);
+        buffer[strcspn(buffer, "\n")] = 0;
+        strncpy(task->description, buffer, MAX_DESC - 1);
+        printf("✓ Description updated!\n");
+    break;
 }
 
 // TODO (Person 2): Implement this function
