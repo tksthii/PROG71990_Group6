@@ -50,8 +50,9 @@ int addTask(TaskList* list, const char* title, const char* description,
     printf("Error: Invalid date format! Use YYYY-MM-DD\n");
     return 0;
 }
-
-    // More validation coming
+   // After validations:
+   Task newTask = createTask(list->nextId, title, description, dueDate, priority); 
+    
     return 0;
 }
 
