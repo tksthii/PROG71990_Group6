@@ -46,6 +46,10 @@ int addTask(TaskList* list, const char* title, const char* description,
     printf("Error: Title cannot be empty!\n");
     return 0;
 }
+    if (!isValidDate(dueDate)) {
+    printf("Error: Invalid date format! Use YYYY-MM-DD\n");
+    return 0;
+}
 
     // More validation coming
     return 0;
