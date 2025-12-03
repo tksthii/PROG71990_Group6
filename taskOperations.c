@@ -121,7 +121,6 @@ int updateTask(TaskList* list, int id) {
     int choice;
     scanf("%d", &choice);
     getchar();
-    return 0;
 
     char buffer[MAX_DESC];
     int priority, status;
