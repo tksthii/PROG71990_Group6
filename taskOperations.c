@@ -122,6 +122,20 @@ int updateTask(TaskList* list, int id) {
     scanf("%d", &choice);
     getchar();
     return 0;
+
+    char buffer[MAX_DESC];
+    int priority, status;
+
+    switch(choice) {
+    case 1:
+        printf("New title: ");
+        fgets(buffer, MAX_TITLE, stdin);
+        buffer[strcspn(buffer, "\n")] = 0;
+        if (strlen(buffer) > 0) {
+            strncpy(task->title, buffer, MAX_TITLE - 1);
+            printf("✓ Title updated!\n");
+        }
+        break;
 }
 
 // TODO (Person 2): Implement this function
