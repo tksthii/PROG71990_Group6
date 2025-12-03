@@ -68,6 +68,17 @@ int deleteTask(TaskList* list, int id) {
         printf("Error: Task with ID %d not found!\n", id);
         return 0;
     }
+    printf("\nAre you sure you want to delete this task?\n");
+    printTaskHeader();
+    printTask(&list->tasks[index]);
+    printf("\nConfirm? (y/n): ");
+    char confirm;
+    scanf(" %c", &confirm);
+
+    if (confirm != 'y' && confirm != 'Y') {
+    printf("Deletion cancelled.\n");
+    return 0;
+}
     // More coming
     return 0;
 }
