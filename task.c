@@ -13,16 +13,24 @@
 // Remember to use strncpy for safe string copying
 Task createTask(int id, const char* title, const char* description, 
                 const char* dueDate, Priority priority) {
-    Task task;
-    
-    // TODO: Initialize all fields of the task struct
+                      // TODO: Initialize all fields of the task struct
     // - Set id
     // - Copy title (use strncpy for safety)
     // - Copy description
     // - Copy dueDate
     // - Set priority
     // - Set isCompleted to 0 (not completed)
-    
+    Task task;// Declare a Task variable
+    task.id = id;
+    strncpy(task.title, title, MAX_TITLE - 1);
+    task.title[MAX_TITLE - 1] = '\0'; // Ensure null-termination
+    strncpy(task.description, description, MAX_DESC - 1);
+    task.description[MAX_DESC - 1] = '\0'; // Ensure null-termination
+    strncpy(task.dueDate, dueDate, MAX_DATE - 1);
+    task.dueDate[MAX_DATE - 1] = '\0'; // Ensure null-termination
+    task.priority = priority;
+    task.isCompleted = 0; // Not completed by default
+
     return task;
 }
 
