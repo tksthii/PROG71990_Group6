@@ -13,7 +13,9 @@
 // Find the array index of a task with given ID
 int findTaskIndexById(const TaskList* list, int id) {
     for (int i = 0; i < list->count; i++) {
-        // TODO: add comparison next commit
+        if (list->tasks[i].id == id) {
+            return i;
+        }
     }
     return -1;
 }
