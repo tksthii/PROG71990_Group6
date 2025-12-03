@@ -42,6 +42,11 @@ int addTask(TaskList* list, const char* title, const char* description,
         printf("Error: Task list is full!\n");
         return 0;
     }
+    if (strlen(title) == 0) {
+    printf("Error: Title cannot be empty!\n");
+    return 0;
+}
+
     // More validation coming
     return 0;
 }
