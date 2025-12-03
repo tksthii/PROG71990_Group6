@@ -13,7 +13,9 @@
 // Find the array index of a task with given ID
 int findTaskIndexById(const TaskList* list, int id) {
     for (int i = 0; i < list->count; i++) {
-        // TODO: add comparison next commit
+        if (list->tasks[i].id == id) {
+            return i;
+        }
     }
     return -1;
 }
@@ -21,12 +23,14 @@ int findTaskIndexById(const TaskList* list, int id) {
 // TODO (Person 2): Implement this helper function
 // Validate date format (YYYY-MM-DD)
 int isValidDate(const char* date) {
-    // TODO:
-    // 1. Check if length is exactly 10
-    // 2. Check if positions 4 and 7 are '-'
-    // 3. Check if all other positions are digits
-    // 4. Return 1 if valid, 0 if invalid
-    return 1; // Placeholder
+    if (strlen(date) != 10) return 0;
+    if (date[4] != '-' || date[7] != '-') return 0;
+    
+    for (int i = 0; i < 10; i++) {
+        if (i == 4 || i == 7) continue;
+        if (!isdigit(date[i])) return 0;
+    }
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
