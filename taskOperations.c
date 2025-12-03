@@ -52,8 +52,11 @@ int addTask(TaskList* list, const char* title, const char* description,
 }
    // After validations:
    Task newTask = createTask(list->nextId, title, description, dueDate, priority); 
-    
-    return 0;
+   list->tasks[list->count] = newTask;
+    list->count++;
+    list->nextId++;
+    printf(" Task added successfully! (ID: %d)\n", newTask.id);
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
