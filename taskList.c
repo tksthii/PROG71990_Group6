@@ -22,14 +22,14 @@ void initTaskList(TaskList* list) {
 // Return the current number of tasks
 int getTaskCount(const TaskList* list) {
     // TODO: Return list->count
-    return 0;
+    return list->count;
 }
 
 // TODO (Person 1): Implement this function
 // Return the next available task ID
 int getNextId(const TaskList* list) {
     // TODO: Return list->nextId
-    return 1;
+    return list->nextId;
 }
 
 // TODO (Person 1): Implement this function
