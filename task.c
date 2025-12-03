@@ -37,9 +37,13 @@ Task createTask(int id, const char* title, const char* description,
 // TODO (Person 1): Implement this function
 // Print a header line for the task table
 void printTaskHeader(void) {
+
     // TODO: Print column headers
     // Suggested format: ID | Title | Due Date | Priority | Status
     // Use printf with proper spacing
+    printf("%-4s | %-20s | %-12s | %-8s | %-10s\n",
+           "ID", "Title", "Due Date", "Priority", "Status");// Column headers
+    printf("-------------------------------------------------------------\n");// Separator line
 }
 
 // TODO (Person 1): Implement this function
