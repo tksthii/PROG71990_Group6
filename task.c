@@ -95,6 +95,20 @@ const char* priorityToString(Priority p) {
 Priority stringToPriority(int p) {
     // TODO: Validate input (1-3) and return appropriate Priority
     // Default to MEDIUM if invalid
+    switch(p)
+    {
+        case 1:
+            return LOW;
+
+        case 2:
+            return MEDIUM;
+        
+        case 3:
+            return HIGH;
+        
+        default:
+            return MEDIUM;
+    }
     
    
 }
