@@ -173,6 +173,16 @@ int updateTask(TaskList* list, int id) {
         printf("Status updated!\n");
     }
     break;
+
+    case 0:
+    printf("Update cancelled.\n");
+    return 0;
+    
+    default:
+    printf("Invalid choice!\n");
+    return 0;
+}
+    return 1;
 }
 
 // TODO (Person 2): Implement this function
