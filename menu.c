@@ -98,11 +98,15 @@ void handleUpdateTask(TaskList* list) {
     updateTask(list, id);
 }
 
+// Handle View Single Task
 void handleViewSingle(TaskList* list) {
-    // TODO:
-    // 1. Print "=== View Single Task ==="
-    // 2. Prompt for task ID
-    // 3. Call displayTaskById() with the ID
+    int id;
+    
+    printf("\n=== View Single Task ===\n");
+    printf("Enter Task ID: ");
+    scanf("%d", &id);
+    
+    displayTaskById(list, id);
 }
 
 void handleViewByRange(TaskList* list) {
