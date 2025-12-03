@@ -196,6 +196,14 @@ int displayTaskById(const TaskList* list, int id) {
     }
     
     const Task* task = &list->tasks[index];
-    // Display coming
+    
+    printf("\n========== Task Details ==========\n");
+    printf("ID:          %d\n", task->id);
+    printf("Title:       %s\n", task->title);
+    printf("Description: %s\n", task->description);
+    printf("Due Date:    %s\n", task->dueDate);
+    printf("Priority:    %s\n", priorityToString(task->priority));
+    printf("Status:      %s\n", task->isCompleted ? "Done" : "Pending");
+    printf("==================================\n");
     return 1;
 }
