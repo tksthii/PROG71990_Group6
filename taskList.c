@@ -48,9 +48,28 @@ int saveTasksToFile(const TaskList* list, const char* filename) {
     // 6. Close the file using fclose()
     // 7. Print success message
     // 8. Return 1 for success
-    
-    printf("Error: saveTasksToFile not implemented yet\n");
-    return 0;
+    FILE* file = fopen("taskmanager.txt", "w");
+    if(file == NULL)
+    {
+        printf("Error: Failed to open the file.\n");
+        return 0;
+    }
+    fprintf(file, "%d\n", list->nextId);
+    fprintf(file, "%d\n", list->count);
+    for(int i = 0; i < list->count; i++)
+    {
+        const Task* task = &list->tasks[i];
+        fprintf(file, "%d|%s|%s|%s|%d|%d\n",
+                task->id,
+                task->title,
+                task->description,
+                task->dueDate,
+                task->priority,
+                task->isCompleted);
+    }
+    fclose(file);
+    printf("Success: Tasks saved to %s\n", filename);
+    return 1;
 }
 
 // TODO (Person 1): Implement this function
