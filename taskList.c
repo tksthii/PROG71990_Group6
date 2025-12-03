@@ -1,6 +1,6 @@
 /*
  * taskList.c
- * Author: Person 1
+ * Author: 
  * Description: Implementation of task list management and file I/O
  */
 
@@ -14,6 +14,8 @@ void initTaskList(TaskList* list) {
     // TODO:
     // - Set count to 0
     // - Set nextId to 1
+    list->count = 0;
+    list->nextId = 1;
 }
 
 // TODO (Person 1): Implement this function
