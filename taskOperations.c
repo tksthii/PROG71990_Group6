@@ -37,18 +37,12 @@ int isValidDate(const char* date) {
 // Add a new task to the list
 int addTask(TaskList* list, const char* title, const char* description,
             const char* dueDate, Priority priority) {
-    // TODO:
-    // 1. Check if list is full (count >= MAX_TASKS)
-    // 2. Validate title is not empty (strlen > 0)
-    // 3. Validate date format using isValidDate()
-    // 4. Create new task using createTask() with list->nextId
-    // 5. Add task to list->tasks[list->count]
-    // 6. Increment list->count
-    // 7. Increment list->nextId
-    // 8. Print success message with task ID
-    // 9. Return 1 for success, 0 for failure
-    
-    printf("Error: addTask not implemented yet\n");
+    // Check if list is full
+    if (list->count >= MAX_TASKS) {
+        printf("Error: Task list is full!\n");
+        return 0;
+    }
+    // More validation coming
     return 0;
 }
 
