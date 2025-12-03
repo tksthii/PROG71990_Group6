@@ -188,18 +188,14 @@ int updateTask(TaskList* list, int id) {
 // TODO (Person 2): Implement this function
 // Display a single task by ID with full details
 int displayTaskById(const TaskList* list, int id) {
-    // TODO:
-    // 1. Find task using findTaskIndexById()
-    // 2. If not found, print error and return 0
-    // 3. Print detailed task information:
-    //    - ID
-    //    - Title
-    //    - Description
-    //    - Due Date
-    //    - Priority
-    //    - Status
-    // 4. Return 1 for success
+    int index = findTaskIndexById(list, id);
     
-    printf("Error: displayTaskById not implemented yet\n");
-    return 0;
+    if (index == -1) {
+        printf("Error: Task with ID %d not found!\n", id);
+        return 0;
+    }
+    
+    const Task* task = &list->tasks[index];
+    // Display coming
+    return 1;
 }
