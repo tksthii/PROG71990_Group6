@@ -91,24 +91,18 @@ int deleteTask(TaskList* list, int id) {
 // TODO (Person 2): Implement this function
 // Update an existing task
 int updateTask(TaskList* list, int id) {
-    // TODO:
-    // 1. Find task using findTaskIndexById()
-    // 2. If not found, print error and return 0
-    // 3. Display current task details
-    // 4. Show menu of what can be updated:
-    //    - 1. Title
-    //    - 2. Description
-    //    - 3. Due Date
-    //    - 4. Priority
-    //    - 5. Status
-    //    - 0. Cancel
-    // 5. Get user choice
-    // 6. Based on choice, update the appropriate field
-    // 7. Validate input where necessary
-    // 8. Print success message
-    // 9. Return 1 for success
+    int index = findTaskIndexById(list, id);
     
-    printf("Error: updateTask not implemented yet\n");
+    if (index == -1) {
+        printf("Error: Task with ID %d not found!\n", id);
+        return 0;
+    }
+    
+    Task* task = &list->tasks[index];
+    
+    printf("\n=== Update Task (ID: %d) ===\n", id);
+    printf("Current details:\n");
+    // Print current task details
     return 0;
 }
 
