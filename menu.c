@@ -4,6 +4,7 @@
  * Description: Implementation of menu system and user interface
  */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include "menu.h"
 #include "taskOperations.h"
 #include "display.h"
@@ -31,9 +32,9 @@ void pressEnterToContinue(void) {
 // Display main menu
 void displayMainMenu(void) {
     printf("\n");
-    printf("╔════════════════════════════════════════╗\n");
-    printf("║       TO-DO MANAGER SYSTEM             ║\n");
-    printf("╚════════════════════════════════════════╝\n");
+    printf("========================================\n");
+    printf("       TO-DO MANAGER SYSTEM             \n");
+    printf("========================================\n");
     printf("  1. Add New Task\n");
     printf("  2. Delete Task\n");
     printf("  3. Update Task\n");
@@ -44,7 +45,7 @@ void displayMainMenu(void) {
     printf("  8. Save to File\n");
     printf("  9. Load from File\n");
     printf("  0. Exit\n");
-    printf("════════════════════════════════════════\n");
+    printf("========================================\n");
     printf("Enter choice: ");
 }
 
