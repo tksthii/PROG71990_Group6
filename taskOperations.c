@@ -102,7 +102,25 @@ int updateTask(TaskList* list, int id) {
     
     printf("\n=== Update Task (ID: %d) ===\n", id);
     printf("Current details:\n");
-    // Print current task details
+
+    printf("Title: %s\n", task->title);
+    printf("Description: %s\n", task->description);
+    printf("Due Date: %s\n", task->dueDate);
+    printf("Priority: %s\n", priorityToString(task->priority));
+    printf("Status: %s\n", task->isCompleted ? "Done" : "Pending");
+    
+    printf("\nWhat would you like to update?\n");
+    printf("1. Title\n");
+    printf("2. Description\n");
+    printf("3. Due Date\n");
+    printf("4. Priority\n");
+    printf("5. Status\n");
+    printf("0. Cancel\n");
+    printf("Choice: ");
+
+    int choice;
+    scanf("%d", &choice);
+    getchar();
     return 0;
 }
 
