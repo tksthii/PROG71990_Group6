@@ -149,11 +149,17 @@ void handleViewByRange(TaskList* list) {
     }
 }
 
+// Handle Search
 void handleSearch(TaskList* list) {
-    // TODO:
-    // 1. Print "=== Search Tasks ==="
-    // 2. Prompt for keyword
-    // 3. Call searchTasksByKeyword() (from Person 3)
+    char keyword[100];
+    
+    printf("\n=== Search Tasks ===\n");
+    printf("Enter keyword to search: ");
+    getchar();  // Clear newline
+    fgets(keyword, 100, stdin);
+    keyword[strcspn(keyword, "\n")] = 0;
+    
+    searchTasksByKeyword(list, keyword);
 }
 
 // TODO (Person 2): Implement this main handler function
