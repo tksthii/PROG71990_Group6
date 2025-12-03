@@ -87,7 +87,28 @@ int loadTasksFromFile(TaskList* list, const char* filename) {
     // 7. Close the file
     // 8. Print success message with number of tasks loaded
     // 9. Return 1 for success
-    
-    printf("Info: No existing data file found. Starting fresh.\n");
-    return 0;
+    FILE* file = fopen("taskmanager.txt", "r");
+    if(file == NULL)
+    {
+        printf("Info: No existing data file found. Starting fresh.\n");
+        return 0;
+    }
+    initTaskList(list);
+    fscanf(file, "%d\n", &list->nextId);
+    fscanf(file, "%d\n", &list->count);
+    for(int i = 0; i < list->count; i++)
+    {
+        Task* task = &list->tasks[i];// Get pointer to current task
+        fscanf(file, "%d|%[^|]|%[^|]|%[^|]|%d|%d\n",
+               &task->id,
+               task->title,
+               task->description,
+               task->dueDate,
+               (int*)&task->priority,
+               &task->isCompleted);
+    }
+    fclose(file);
+    printf("Success: Loaded %d tasks from %s\n", list->count, "taskmanager.txt");
+
+    return 1;
 }
