@@ -87,11 +87,15 @@ void handleDeleteTask(TaskList* list) {
     deleteTask(list, id);
 }
 
+// Handle Update Task
 void handleUpdateTask(TaskList* list) {
-    // TODO:
-    // 1. Print "=== Update Task ==="
-    // 2. Prompt for task ID
-    // 3. Call updateTask() with the ID
+    int id;
+    
+    printf("\n=== Update Task ===\n");
+    printf("Enter Task ID to update: ");
+    scanf("%d", &id);
+    
+    updateTask(list, id);
 }
 
 void handleViewSingle(TaskList* list) {
