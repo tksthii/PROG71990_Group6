@@ -28,21 +28,23 @@ void pressEnterToContinue(void) {
 
 // TODO (Person 2): Implement this function
 // Display the main menu with all options
+// Display main menu
 void displayMainMenu(void) {
-    // TODO: Print the menu with these options:
-    // 1. Add New Task
-    // 2. Delete Task
-    // 3. Update Task
-    // 4. View Single Task
-    // 5. View Tasks by Range/Filter
-    // 6. View All Tasks
-    // 7. Search Tasks
-    // 8. Save to File
-    // 9. Load from File
-    // 0. Exit
-    
-    printf("\n=== TO-DO MANAGER ===\n");
-    printf("Menu not implemented yet\n");
+    printf("\n");
+    printf("╔════════════════════════════════════════╗\n");
+    printf("║       TO-DO MANAGER SYSTEM             ║\n");
+    printf("╚════════════════════════════════════════╝\n");
+    printf("  1. Add New Task\n");
+    printf("  2. Delete Task\n");
+    printf("  3. Update Task\n");
+    printf("  4. View Single Task\n");
+    printf("  5. View Tasks by Range/Filter\n");
+    printf("  6. View All Tasks\n");
+    printf("  7. Search Tasks\n");
+    printf("  8. Save to File\n");
+    printf("  9. Load from File\n");
+    printf("  0. Exit\n");
+    printf("════════════════════════════════════════\n");
     printf("Enter choice: ");
 }
 
