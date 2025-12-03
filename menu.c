@@ -49,15 +49,31 @@ void displayMainMenu(void) {
 }
 
 // TODO (Person 2): Implement these handler functions
-
+// Handle Add Task
 void handleAddTask(TaskList* list) {
-    // TODO:
-    // 1. Print "=== Add New Task ==="
-    // 2. Prompt for title (use fgets)
-    // 3. Prompt for description
-    // 4. Prompt for due date
-    // 5. Prompt for priority (1-3)
-    // 6. Call addTask() with the input
+    char title[MAX_TITLE];
+    char description[MAX_DESC];
+    char dueDate[MAX_DATE];
+    int priorityChoice;
+    
+    printf("\n=== Add New Task ===\n");
+    
+    printf("Title: ");
+    fgets(title, MAX_TITLE, stdin);
+    title[strcspn(title, "\n")] = 0;
+    
+    printf("Description: ");
+    fgets(description, MAX_DESC, stdin);
+    description[strcspn(description, "\n")] = 0;
+    
+    printf("Due Date (YYYY-MM-DD): ");
+    scanf("%10s", dueDate);
+    
+    printf("Priority (1=Low, 2=Medium, 3=High): ");
+    scanf("%d", &priorityChoice);
+    
+    Priority priority = stringToPriority(priorityChoice);
+    addTask(list, title, description, dueDate, priority);
 }
 
 void handleDeleteTask(TaskList* list) {
