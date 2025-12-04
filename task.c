@@ -1,9 +1,3 @@
-/*
- * task.c
- * Author: Person 1
- * Description: Implementation of Task ADT operations
- */
-
 #include "task.h"
 #include <stdio.h>
 #include <string.h>
