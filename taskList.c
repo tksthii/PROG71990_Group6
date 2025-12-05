@@ -1,6 +1,6 @@
 /*
  * taskList.c
- * Author: 
+ * Author: Lynn
  * Description: Implementation of task list management and file I/O
  */
 
