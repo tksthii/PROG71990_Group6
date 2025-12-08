@@ -21,7 +21,7 @@ int main(void) {
 
     // TODO (Person 3): Implement program initialization
     // 1. Call initTaskList() to initialize the task list
-    initializeTaskList(&taskList); // Assuming 'initializeTaskList' is the name of the function implemented in taskOperations.c/taskList.h
+    initTaskList(&taskList); // Assuming 'initializeTaskList' is the name of the function implemented in taskOperations.c/taskList.h
 
     // 2. Print welcome message
     printf("========================================\n");
