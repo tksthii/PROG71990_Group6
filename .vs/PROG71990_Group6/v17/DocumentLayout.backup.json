@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "task.c",
               "ToolTip": "C:\\Users\\SSWCH\\source\\repos\\PROG71990_Group6\\task.c",
               "RelativeToolTip": "task.c",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowC0AAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowCgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-12-05T05:27:14.966Z",
               "IsPinned": true,
@@ -108,8 +108,7 @@
               "RelativeToolTip": "main.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-05T05:30:52.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T05:30:52.08Z"
             },
             {
               "$type": "Document",
@@ -121,8 +120,7 @@
               "RelativeToolTip": "taskOperations.c",
               "ViewState": "AgIAALMAAAAAAAAAAAAowLgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-05T05:27:46.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T05:27:46.598Z"
             },
             {
               "$type": "Document",
@@ -134,8 +132,7 @@
               "RelativeToolTip": "taskList.c",
               "ViewState": "AgIAAEUAAAAAAAAAAAAowF4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-05T05:27:31.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T05:27:31.923Z"
             },
             {
               "$type": "Document",
@@ -147,8 +144,7 @@
               "RelativeToolTip": "menu.h",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-05T05:27:02.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T05:27:02.129Z"
             },
             {
               "$type": "Document",
@@ -160,8 +156,7 @@
               "RelativeToolTip": "menu.c",
               "ViewState": "AgIAAMkAAAAAAAAAAAAowOcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-05T05:26:56.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T05:26:56.965Z"
             },
             {
               "$type": "Document",
@@ -173,8 +168,7 @@
               "RelativeToolTip": "display.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-05T04:46:59.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T04:46:59.556Z"
             },
             {
               "$type": "Document",
@@ -186,8 +180,7 @@
               "RelativeToolTip": "display.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-05T04:46:58.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T04:46:58.545Z"
             }
           ]
         }
