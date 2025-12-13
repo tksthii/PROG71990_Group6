@@ -4,27 +4,12 @@
  * Description: Implementation of display and search operations
  */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include "display.h"
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <stdlib.h> // Included for general string utilities if needed, though most are in string.h
-
- // --- ASSUMED EXTERNAL DEFINITIONS (for internal use) ---
- // Note: These definitions assume Task and TaskList structure from the project context.
- // For example, assuming Task struct members like title, description, dueDate, etc.
-
- // Helper function to convert Priority enum to a string for display headers.
- // (This is often required if printTaskHeader/printTask don't handle it directly)
-static const char* priorityToString(Priority p) {
-    switch (p) {
-    case LOW: return "LOW";
-    case MEDIUM: return "MEDIUM";
-    case HIGH: return "HIGH";
-    default: return "UNKNOWN";
-    }
-}
-// -------------------------------------------------------
+#include <stdlib.h>
 
 
 // TODO (Person 3): Implement this helper function
@@ -85,10 +70,10 @@ void displayTasksByPriority(const TaskList* list, Priority priority) {
     // 5. Count how many tasks match (done in loop)
     // 6. Print "Found X task(s)"
     printf("----------------------------------------\n");
-    printf("Found %d task(s) with %s priority.\n", matchCount, priorityToString(priority));
-
     if (matchCount == 0) {
-        printf("No tasks found with %s priority.\n");
+        printf("No tasks found with %s priority.\n", priorityToString(priority));
+    } else {
+        printf("Found %d task(s) with %s priority.\n", matchCount, priorityToString(priority));
     }
 }
 

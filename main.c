@@ -7,6 +7,7 @@
  * - Handle program initialization and cleanup
  */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "taskList.h"
 #include "menu.h"
