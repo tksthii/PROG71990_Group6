@@ -31,17 +31,18 @@ int main(void) {
     printf("\nAttempting to load existing tasks...\n");
     loadTasksFromFile(&taskList, DATA_FILE);
     
-    // TODO (Person 3): Implement main program loop
-    // while (running) {
-    //     1. Call displayMainMenu()
-    //     2. Read user choice with scanf()
-    //     3. Validate input (check if scanf returned 1)
-    //     4. If invalid, clear input buffer and show error
-    //     5. Call handleMenuChoice() with the choice
-    // }
-    
-    printf("Error: main() not fully implemented yet\n");
-    printf("Program structure is ready - implement the TODO items!\n");
+    // Main program loop
+    while (running) {
+        displayMainMenu();
+        
+        if (scanf("%d", &choice) != 1) {
+            printf("\nInvalid input! Please enter a number.\n");
+            while (getchar() != '\n');  // Clear invalid input
+            continue;
+        }
+        
+        handleMenuChoice(&taskList, choice, &running);
+    }
     
     return 0;
 }
