@@ -2,8 +2,7 @@
  * main.c
  * Author: Person 3
  * Description: Main entry point for To-Do Manager application
- * 
- * TODO (Person 3):
+ * * TODO (Person 3):
  * - Implement the main loop
  * - Handle program initialization and cleanup
  */
@@ -11,6 +10,7 @@
 #include <stdio.h>
 #include "taskList.h"
 #include "menu.h"
+#include <stdlib.h> // Added for general C utilities
 
 #define DATA_FILE "tasks.dat"
 int main(void) {
