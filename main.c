@@ -43,6 +43,12 @@ int main(void) {
         
         handleMenuChoice(&taskList, choice, &running);
     }
+    // Exit message
+    printf("\n");
+    printf("╔════════════════════════════════════════╗\n");
+    printf("║         PROGRAM TERMINATED             ║\n");
+    printf("╚════════════════════════════════════════╝\n");
+    printf("\n");
     
     return 0;
 }
