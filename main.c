@@ -27,8 +27,9 @@ int main(void) {
     printf("  Welcome to TO-DO MANAGER!\n");
     printf("════════════════════════════════════════\n");
     
-    // 3. Try to load existing tasks from file
-    //    Call loadTasksFromFile(&taskList, DATA_FILE)
+   // Try to load existing data
+    printf("\nAttempting to load existing tasks...\n");
+    loadTasksFromFile(&taskList, DATA_FILE);
     
     // TODO (Person 3): Implement main program loop
     // while (running) {
