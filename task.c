@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "task.h"
 #include <stdio.h>
 #include <string.h>
@@ -45,7 +46,7 @@ void printTask(const Task* task) {
     else{
         status = "Pending";
     }
-    printf("%-4s | %-20s | %-12s | %-8s | %-10s\n",
+    printf("%-4d | %-20s | %-12s | %-8s | %-10s\n",
        task->id,task->title,task->dueDate,priorityToString(task->priority),status);
 }
 

@@ -1,9 +1,10 @@
 /*
  * taskList.c
- * Author: Lynn
+ * Author: 
  * Description: Implementation of task list management and file I/O
  */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include "taskList.h"
 #include <stdio.h>
 #include <string.h>
