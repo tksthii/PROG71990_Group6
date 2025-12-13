@@ -13,16 +13,19 @@
 #include "menu.h"
 
 #define DATA_FILE "tasks.dat"
-
 int main(void) {
     TaskList taskList;
     int running = 1;
     int choice;
     
-    // TODO (Person 3): Implement program initialization
-    // 1. Call initTaskList() to initialize the task list
+    // Initialize task list
+    initTaskList(&taskList);
     
-    // 2. Print welcome message
+    // Welcome message
+    printf("\n");
+    printf("════════════════════════════════════════\n");
+    printf("  Welcome to TO-DO MANAGER!\n");
+    printf("════════════════════════════════════════\n");
     
     // 3. Try to load existing tasks from file
     //    Call loadTasksFromFile(&taskList, DATA_FILE)
